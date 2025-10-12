@@ -4,59 +4,130 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Keitarou Matsumoto | Home</title>
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body class="bg-zinc-100 text-zinc-800">
-    <!-- Top Nav -->
-    <header class="sticky top-0 z-10 bg-zinc-100/80 backdrop-blur border-b border-zinc-200">
+  <body class="bg-white text-zinc-900">
+    <!-- ===== Top Bar ===== -->
+    <header class="sticky top-0 z-10 bg-white/90 backdrop-blur border-b border-zinc-200">
       <nav class="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
-        <div class="font-medium tracking-wide">Keitarou Matsumoto</div>
-        <ul class="hidden md:flex items-center gap-6 text-sm text-zinc-600">
-          <li class="font-semibold text-zinc-900 border-b-2 border-zinc-900 pb-1">Home</li>
-          <li><a href="#education" class="hover:text-zinc-900">Education</a></li>
-          <li><a href="publication.html" class="hover:text-zinc-900">Publication</a></li>
-          <li><a href="#presentation" class="hover:text-zinc-900">Presentation</a></li>
-          <li><a href="#research" class="hover:text-zinc-900">Teaching Experience</a></li>
-          <li>Japanese</li>
+        <!-- Left: Icon + Name -->
+        <a href="index.html" class="flex items-center gap-3">
+          <!-- PDF icon (fallback to PNG if PDF can't render) -->
+          <div class="h-9 w-9 rounded-full overflow-hidden ring-1 ring-zinc-300 flex items-center justify-center bg-white">
+            <object data="me_picture.pdf#page=1"
+                    type="application/pdf"
+                    class="h-full w-full"
+                    aria-label="profile icon">
+              <img src="me_picture.png" alt="profile icon" class="h-full w-full object-cover" />
+            </object>
+          </div>
+          <span class="text-[17px] leading-none">
+            <span class="text-sky-700 underline decoration-sky-700/40 decoration-2">Keitarou</span>
+            <span class="ml-1">Matsumoto</span>
+          </span>
+        </a>
+
+        <!-- Right: Nav -->
+        <ul class="hidden md:flex items-center text-[15px] text-zinc-800">
+          <li><a href="index.html" class="hover:opacity-80">Home</a></li>
+          <li class="mx-3 text-zinc-400">|</li>
+          <li><a href="#education" class="hover:opacity-80">Education</a></li>
+          <li class="mx-3 text-zinc-400">|</li>
+          <li><a href="publications.html" class="hover:opacity-80">Publication</a></li>
+          <li class="mx-3 text-zinc-400">|</li>
+          <li><a href="#teaching" class="hover:opacity-80">Teaching Experience</a></li>
+          <li class="mx-3 text-zinc-400">|</li>
+          <li><a href="#jp" class="hover:opacity-80">Japanese</a></li>
         </ul>
-        <button class="md:hidden inline-flex items-center justify-center rounded-xl border border-zinc-300 px-3 py-1 text-sm">メニュー</button>
+
+        <button class="md:hidden inline-flex items-center justify-center rounded-xl border border-zinc-300 px-3 py-1 text-sm">
+          Menu
+        </button>
       </nav>
     </header>
 
-    <!-- Page Title -->
+    <!-- ===== Page Title ===== -->
     <section class="mx-auto max-w-6xl px-4">
-      <h1 class="text-center text-3xl md:text-4xl font-extrabold tracking-wider py-10">Home</h1>
+      <h1 class="text-center text-3xl md:text-4xl font-semibold tracking-tight py-8">Home</h1>
     </section>
 
-    <!-- Main Content -->
-    <main class="mx-auto max-w-6xl px-4 pb-16 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-start">
-      <!-- Left column -->
-      <div class="leading-8 text-[15px] md:text-base">
-        <h2 class="text-2xl md:text-3xl font-semibold mb-6">Keitarou Matsumoto</h2>
+    <!-- ===== Main Two-Column ===== -->
+    <main class="mx-auto max-w-6xl px-4 pb-16 grid grid-cols-1 md:grid-cols-[minmax(260px,520px)_1fr] gap-10 items-start">
+      <!-- Left: Big photo + caption -->
+      <figure class="justify-self-center md:justify-self-start">
+        <img
+          src="photo.jpg"
+          alt="New York, United States"
+          class="w-[520px] max-w-full aspect-[1/1] object-cover rounded-[28px] border border-zinc-200 shadow-sm"
+        />
+        <figcaption class="mt-3 text-sm text-zinc-600 flex items-center justify-center md:justify-start gap-1">
+          <span>📍</span> New York, United States
+        </figcaption>
+      </figure>
 
-        <p class="mb-4">PhD Student（New Jersey Institute of Technology, United States）</p>
+      <!-- Right: Profile details -->
+      <section class="leading-8 text-[15px] md:text-[16px]">
+        <!-- Name line -->
+        <h2 class="text-[22px] md:text-[24px] font-medium mb-2">
+          <a href="#" class="underline decoration-sky-700/40 decoration-2 text-sky-700">Keitarou</a>
+          <span class="ml-1">Matsumoto</span>
+          <span class="ml-4 text-zinc-700">松本 圭太郎</span>
+        </h2>
 
-        <div class="space-y-2 mb-6">
-          <p class="mb-4">Mail: km876☀️njit.edu (Replace ☀️ with @)</p>
+        <!-- Position -->
+        <p class="mb-5">
+          PhD Student<br />
+          <span class="text-zinc-700">( New Jersey Institute of Technology, United States )</span>
+        </p>
+
+        <!-- Keywords -->
+        <div class="mb-5">
+          <p class="flex items-start gap-2"><span class="text-red-600 mt-1">•</span> <span>Keywords of research</span></p>
+          <p class="pl-5 text-zinc-800">Solar flares / Magnetohydrodynamics / Microwave / Hard X-rays</p>
         </div>
 
-        <p class="mb-6">Keywords of research: Solar flares, Magnetohydrodynamics, Microwave, Hard X-rays</p>
+        <!-- Contact -->
+        <div class="mb-5">
+          <p class="flex items-start gap-2"><span class="text-red-600 mt-1">•</span> <span>Contact</span></p>
+          <p class="pl-5 font-mono">
+            km876<span class="mx-0.5">(at)</span>njit.edu
+            <span class="ml-3 text-zinc-500 text-[13px]">Please replace (at) with @.</span>
+          </p>
+        </div>
 
-        <p class="mb-2">Link：
-          <a class="text-blue-600 hover:text-blue-700 underline" href="https://scholar.google.com/citations?user=_pCyG4QAAAAJ&hl=en/" target="_blank" rel="noopener">Google Scholar</a>
-          <span class="mx-1">/</span>
-          <a class="text-blue-600 hover:text-blue-700 underline" href="https://researchmap.jp/keitaroumatsumoto?lang=en/" target="_blank" rel="noopener">Researchmap</a>
-        </p>
-      </div>
+        <!-- Links -->
+        <div class="mb-8">
+          <p class="flex items-start gap-2"><span class="text-red-600 mt-1">•</span> <span>Link</span></p>
+          <p class="pl-5">
+            <a class="text-sky-700 underline hover:opacity-80" href="https://scholar.google.com/citations?user=_pCyG4QAAAAJ&hl=en/" target="_blank" rel="noopener">Google Scholar</a>
+            <span class="mx-1 text-zinc-500">/</span>
+            <a class="text-sky-700 underline hover:opacity-80" href="https://researchmap.jp/keitaroumatsumoto?lang=en/" target="_blank" rel="noopener">Researchmap</a>
+          </p>
+        </div>
 
-      <!-- Right column: photo -->
-      <figure class="md:justify-self-end">
-        <img src="photo.jpg" alt="New York, United States" class="w-full max-w-xl rounded-2xl shadow-sm border border-zinc-200 object-cover" />
-        <figcaption class="mt-3 text-sm text-zinc-500 text-center">New York, United States</figcaption>
-      </figure>
+        <!-- News -->
+        <div class="mb-3">
+          <p class="flex items-start gap-2"><span class="text-red-600 mt-1">•</span> <span>News</span></p>
+        </div>
+        <div class="pl-5">
+          <div class="border border-zinc-300 rounded-md overflow-hidden">
+            <!-- 4 empty rows like a table -->
+            <div class="h-12 border-b border-zinc-200"></div>
+            <div class="h-12 border-b border-zinc-200"></div>
+            <div class="h-12 border-b border-zinc-200"></div>
+            <div class="h-12"></div>
+          </div>
+        </div>
+      </section>
     </main>
 
-    <!-- Footer -->
+    <!-- Anchors (placeholders for nav targets) -->
+    <section id="education" class="sr-only" aria-hidden="true"></section>
+    <section id="teaching" class="sr-only" aria-hidden="true"></section>
+    <section id="jp" class="sr-only" aria-hidden="true"></section>
+
+    <!-- ===== Footer ===== -->
     <footer class="border-t border-zinc-200 py-6 text-center text-xs text-zinc-500">
       © <span id="year"></span> Keitarou Matsumoto
     </footer>
