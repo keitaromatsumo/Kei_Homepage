@@ -13,17 +13,11 @@
       <nav class="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
         <!-- Left: Icon + Name -->
         <a href="index.html" class="flex items-center gap-3">
-          <!-- PDF icon (fallback to PNG if PDF can't render) -->
-          <div class="h-9 w-9 rounded-full overflow-hidden ring-1 ring-zinc-300 flex items-center justify-center bg-white">
-            <object data="me_picture.pdf#page=1"
-                    type="application/pdf"
-                    class="h-full w-full"
-                    aria-label="profile icon">
-              <img src="me_picture.png" alt="profile icon" class="h-full w-full object-cover" />
-            </object>
-          </div>
+          <!-- PNG icon -->
+          <img src="me_picture.png" alt="profile icon"
+               class="h-9 w-9 rounded-full object-cover ring-1 ring-zinc-300" />
           <span class="text-[17px] leading-none">
-            <span class="text-sky-700 underline decoration-sky-700/40 decoration-2">Keitarou</span>
+            <span>Keitarou</span>
             <span class="ml-1">Matsumoto</span>
           </span>
         </a>
@@ -70,7 +64,7 @@
       <section class="leading-8 text-[15px] md:text-[16px]">
         <!-- Name line -->
         <h2 class="text-[22px] md:text-[24px] font-medium mb-2">
-          <a href="#" class="underline decoration-sky-700/40 decoration-2 text-sky-700">Keitarou</a>
+          <span>Keitarou</span>
           <span class="ml-1">Matsumoto</span>
           <span class="ml-4 text-zinc-700">松本 圭太郎</span>
         </h2>
@@ -83,13 +77,19 @@
 
         <!-- Keywords -->
         <div class="mb-5">
-          <p class="flex items-start gap-2"><span class="text-red-600 mt-1">•</span> <span>Keywords of research</span></p>
+          <p class="flex items-center gap-2">
+            <span class="inline-block w-1.5 h-1.5 bg-red-600 rounded-full"></span>
+            <span>Keywords of research</span>
+          </p>
           <p class="pl-5 text-zinc-800">Solar flares / Magnetohydrodynamics / Microwave / Hard X-rays</p>
         </div>
 
         <!-- Contact -->
         <div class="mb-5">
-          <p class="flex items-start gap-2"><span class="text-red-600 mt-1">•</span> <span>Contact</span></p>
+          <p class="flex items-center gap-2">
+            <span class="inline-block w-1.5 h-1.5 bg-red-600 rounded-full"></span>
+            <span>Contact</span>
+          </p>
           <p class="pl-5 font-mono">
             km876<span class="mx-0.5">(at)</span>njit.edu
             <span class="ml-3 text-zinc-500 text-[13px]">Please replace (at) with @.</span>
@@ -98,17 +98,23 @@
 
         <!-- Links -->
         <div class="mb-8">
-          <p class="flex items-start gap-2"><span class="text-red-600 mt-1">•</span> <span>Link</span></p>
+          <p class="flex items-center gap-2">
+            <span class="inline-block w-1.5 h-1.5 bg-red-600 rounded-full"></span>
+            <span>Link</span>
+          </p>
           <p class="pl-5">
-            <a class="text-sky-700 underline hover:opacity-80" href="https://scholar.google.com/citations?user=_pCyG4QAAAAJ&hl=en/" target="_blank" rel="noopener">Google Scholar</a>
+            <a class="underline hover:opacity-80" href="https://scholar.google.com/citations?user=_pCyG4QAAAAJ&hl=en/" target="_blank" rel="noopener">Google Scholar</a>
             <span class="mx-1 text-zinc-500">/</span>
-            <a class="text-sky-700 underline hover:opacity-80" href="https://researchmap.jp/keitaroumatsumoto?lang=en/" target="_blank" rel="noopener">Researchmap</a>
+            <a class="underline hover:opacity-80" href="https://researchmap.jp/keitaroumatsumoto?lang=en/" target="_blank" rel="noopener">Researchmap</a>
           </p>
         </div>
 
         <!-- News -->
         <div class="mb-3">
-          <p class="flex items-start gap-2"><span class="text-red-600 mt-1">•</span> <span>News</span></p>
+          <p class="flex items-center gap-2">
+            <span class="inline-block w-1.5 h-1.5 bg-red-600 rounded-full"></span>
+            <span>News</span>
+          </p>
         </div>
         <div class="pl-5">
           <div class="border border-zinc-300 rounded-md overflow-hidden">
