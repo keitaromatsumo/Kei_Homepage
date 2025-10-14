@@ -7,7 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body class="bg-white text-zinc-900">
-    <!-- ===== Top Bar (Homeと統一) ===== -->
+    <!-- ===== Top Bar (mobile対応) ===== -->
     <header class="sticky top-0 z-10 bg-white/90 backdrop-blur border-b border-zinc-200">
       <nav class="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
         <!-- 左: アイコン + 名前（Homeへ） -->
@@ -15,12 +15,11 @@
           <img src="me_picture.png" alt="profile icon"
                class="h-9 w-9 rounded-full object-cover ring-1 ring-zinc-300" />
           <span class="text-[17px] leading-none">
-            <span>Keitarou</span>
-            <span class="ml-1">Matsumoto</span>
+            <span>Keitarou</span><span class="ml-1">Matsumoto</span>
           </span>
         </a>
 
-        <!-- 右: ナビ -->
+        <!-- 右: デスクトップナビ -->
         <ul class="hidden md:flex items-center text-[15px] text-zinc-800">
           <li><a href="index.html" class="hover:opacity-80">Home</a></li>
           <li class="mx-3 text-zinc-400">|</li>
@@ -28,15 +27,28 @@
           <li class="mx-3 text-zinc-400">|</li>
           <li><a href="publication.html" class="hover:opacity-80">Publication</a></li>
           <li class="mx-3 text-zinc-400">|</li>
-          <li><a href="teaching.html"  class="hover:opacity-80">Teaching Experience</a></li>
+          <li><a href="teaching.html" class="hover:opacity-80">Teaching Experience</a></li>
         </ul>
 
-        <!-- モバイル時はHomeへ戻るボタン -->
-        <a href="index.html"
-           class="md:hidden inline-flex items-center justify-center rounded-xl border border-zinc-300 px-3 py-1 text-sm">
-          Home
-        </a>
+        <!-- モバイル: メニューボタン -->
+        <button id="menuBtn"
+          class="md:hidden inline-flex items-center justify-center rounded-xl border border-zinc-300 px-3 py-1 text-sm"
+          aria-controls="mobileNav" aria-expanded="false" aria-label="Open menu">
+          Menu
+        </button>
       </nav>
+
+      <!-- モバイルナビ（初期は非表示） -->
+      <div id="mobileNav" class="md:hidden hidden border-t border-zinc-200 bg-white">
+        <div class="mx-auto max-w-6xl px-4 py-3">
+          <ul class="space-y-3 text-[15px]">
+            <li><a href="index.html" class="block py-2">Home</a></li>
+            <li><a href="education.html" class="block py-2">Education</a></li>
+            <li><a href="publication.html" class="block py-2">Publication</a></li>
+            <li><a href="teaching.html" class="block py-2">Teaching Experience</a></li>
+          </ul>
+        </div>
+      </div>
     </header>
 
     <!-- ===== Title ===== -->
@@ -121,7 +133,18 @@
     </footer>
 
     <script>
+      // 年表示
       document.getElementById('year').textContent = new Date().getFullYear();
+      // モバイルナビ開閉
+      const btn = document.getElementById('menuBtn');
+      const panel = document.getElementById('mobileNav');
+      if (btn && panel) {
+        btn.addEventListener('click', () => {
+          const open = !panel.classList.contains('hidden');
+          panel.classList.toggle('hidden');
+          btn.setAttribute('aria-expanded', String(!open));
+        });
+      }
     </script>
   </body>
 </html>
