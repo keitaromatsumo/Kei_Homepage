@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Keitarou Matsumoto | Research Memo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body class="bg-white text-zinc-900">
+    <!-- ===== Top Bar (mobile対応) ===== -->
+    <header class="sticky top-0 z-10 bg-white/90 backdrop-blur border-b border-zinc-200">
+      <nav class="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
+        <!-- Left: Icon + Name -->
+        <a href="index.html" class="flex items-center gap-3">
+          <img src="me_picture.png" alt="profile icon"
+               class="h-9 w-9 rounded-full object-cover ring-1 ring-zinc-300" />
+          <span class="text-[17px] leading-none">
+            <span>Keitarou</span><span class="ml-1">Matsumoto</span>
+          </span>
+        </a>
+
+        <!-- Desktop Nav -->
+        <ul class="hidden md:flex items-center text-[15px] text-zinc-800">
+          <li><a href="index.html" class="hover:opacity-80">Home</a></li>
+          <li class="mx-3 text-zinc-400">|</li>
+          <li><a href="education.html" class="hover:opacity-80">Education</a></li>
+          <li class="mx-3 text-zinc-400">|</li>
+          <li><a href="publication.html" class="hover:opacity-80">Publication</a></li>
+          <li class="mx-3 text-zinc-400">|</li>
+          <li><a href="teaching.html" class="hover:opacity-80">Teaching Experience</a></li>
+          <li class="mx-3 text-zinc-400">|</li>
+          <li class="font-semibold text-zinc-900">Research Memo</li>
+        </ul>
+
+        <!-- Mobile: Menu -->
+        <button id="menuBtn"
+          class="md:hidden inline-flex items-center justify-center rounded-xl border border-zinc-300 px-3 py-1 text-sm"
+          aria-controls="mobileNav" aria-expanded="false" aria-label="Open menu">
+          Menu
+        </button>
+      </nav>
+
+      <!-- Mobile Nav -->
+      <div id="mobileNav" class="md:hidden hidden border-t border-zinc-200 bg-white">
+        <div class="mx-auto max-w-6xl px-4 py-3">
+          <ul class="space-y-3 text-[15px]">
+            <li><a href="index.html" class="block py-2">Home</a></li>
+            <li><a href="education.html" class="block py-2">Education</a></li>
+            <li><a href="publication.html" class="block py-2">Publication</a></li>
+            <li><a href="teaching.html" class="block py-2">Teaching Experience</a></li>
+            <li><a href="memo.html" class="block py-2">Research Memo</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <!-- ===== Title ===== -->
+    <section class="mx-auto max-w-6xl px-4">
+      <h1 class="text-center text-3xl md:text-4xl font-semibold tracking-tight py-8">
+        Research Memo
+      </h1>
+    </section>
+
+    <!-- ===== Content (minimal) ===== -->
+    <main class="mx-auto max-w-5xl px-4 pb-20">
+      <article class="rounded-2xl bg-white border border-zinc-200 shadow-sm p-5 md:p-6">
+        <div class="flex items-start justify-between gap-4">
+          <div>
+            <h2 class="text-base md:text-lg font-semibold leading-snug">
+              STIX spectral analysis tips
+            </h2>
+            <p class="text-sm md:text-base text-zinc-700 mt-1">
+              Quick notes and practical tips for spectral fitting and common pitfalls.
+            </p>
+          </div>
+          <!-- ここをあなたのリンクに差し替え -->
+          <a class="shrink-0 text-sm underline hover:opacity-80"
+             href="https://github.com/USERNAME/REPO"
+             target="_blank" rel="noopener">
+            link
+          </a>
+        </div>
+      </article>
+    </main>
+
+    <!-- ===== Footer ===== -->
+    <footer class="border-t border-zinc-200 py-6 text-center text-xs text-zinc-500">
+      © <span id="year"></span> Keitarou Matsumoto
+    </footer>
+
+    <!-- ===== Scripts ===== -->
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+      const btn = document.getElementById('menuBtn');
+      const panel = document.getElementById('mobileNav');
+      if (btn && panel) {
+        btn.addEventListener('click', () => {
+          const open = !panel.classList.contains('hidden');
+          panel.classList.toggle('hidden');
+          btn.setAttribute('aria-expanded', String(!open));
+        });
+      }
+    </script>
+  </body>
+</html>
